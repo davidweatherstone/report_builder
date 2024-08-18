@@ -7,7 +7,7 @@ Many businesses require reports on share prices, commodity prices, and industry-
 These reports are often repetitive, typically consisting of slide decks with repeated charts and brief contextual text. From my experience creating these monthly, they can become tedious, and maintaining consistent formatting is challenging.
 
 ## Task
-My goal was to enhance teh visual quality of the report while streamlining the update process by automating much of the work.
+My goal was to enhance the visual quality of the report while streamlining the update process by automating much of the work.
 
 ## Action
 I initially considered using Power BI, given my experience with it. However, since colleagues were accustomed to receiving the report as a PDF in their inbox each month, and by considering the user experience, I realized Power BI dashboards require effort from the audience to interact with the visuals—navigating pages, clicking buttons, and adjusting slicers. Although the data is valuable, I doubted most people would go through the effort.

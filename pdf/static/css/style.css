@@ -1,0 +1,246 @@
+/* Resources 
+
+https://css-tricks.com/a-perfect-table-of-contents-with-html-css/
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  max-width: 210mm;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #00205b;
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+}
+
+.title-page {
+  background-image: url("../img/assets/title_page_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.title-text {
+  padding: 3.2rem;
+  width: 210mm;
+  background-color: #00205b;
+
+  position: relative;
+  top: 24rem;
+  left: -2rem;
+}
+
+.report-title,
+.report-subtitle,
+.report-date {
+  font-weight: 600;
+  color: #fff;
+  margin: 0 1.8rem 2.2rem 1.8rem;
+}
+
+.report-title {
+  font-size: 6.4rem;
+}
+
+.report-subtitle {
+  font-size: 4.8rem;
+}
+
+.report-date {
+  font-size: 3.6rem;
+}
+
+.page-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin: 3.6rem 0 2.2rem 0;
+  text-align: center;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.chart-container img {
+  max-width: 96%;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+  display: block;
+  object-fit: contain;
+  box-sizing: border-box;
+}
+
+.cont-2-imgs .image,
+.cont-2-imgs .image-smaller {
+  max-height: 400px;
+}
+
+.cont-3-imgs .image {
+  max-height: 300px;
+  width: auto;
+}
+
+.cont-3-imgs .image-smaller {
+  max-height: 244px;
+  width: auto;
+}
+
+.cont-4-imgs,
+.cont-5-imgs,
+.cont-6-imgs,
+.cont-7-imgs,
+.cont-8-imgs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.contents-container {
+  height: 90%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.comment {
+  font-size: 1.8rem;
+  margin-bottom: 2.2rem;
+}
+
+/* https://css-tricks.com/a-perfect-table-of-contents-with-html-css/
+*/
+
+.toc-list,
+.toc-list ol {
+  list-style-type: none;
+}
+
+.toc-list {
+  width: 70%;
+  padding: 0;
+  font-size: 2.2rem;
+  line-height: 2;
+}
+
+.toc-list ol {
+  padding-inline-start: 2ch;
+}
+
+.toc-list li > a {
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: auto max-content;
+  align-items: end;
+}
+
+.toc-list li > a > .page {
+  min-width: 2ch;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.toc-list li > a > .title {
+  position: relative;
+  overflow: hidden;
+}
+
+.toc-list li > a .leaders::after {
+  position: absolute;
+  padding-inline-start: 0.25ch;
+  content: " . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . . . . ";
+  text-align: right;
+}
+
+.item-link {
+  text-decoration: none;
+  color: #00205b;
+}
+
+.item-link:visited,
+.item-link:link,
+.item-link:hover,
+.item-link:active,
+.title,
+.page-number,
+.visually-hidden {
+  text-decoration: none;
+  color: #00205b;
+  font-weight: 500;
+}
+
+.brand-logo {
+  max-width: 12rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.footer-note {
+  position: absolute;
+  bottom: 3.6rem;
+  align-self: center;
+}
+
+@media print {
+  .page {
+    border: none;
+    box-shadow: none;
+    page-break-after: always;
+  }
+
+  .container {
+    margin: 0;
+  }
+
+  .content {
+    page-break-inside: avoid;
+  }
+
+  .chart-container img {
+    box-shadow: none;
+  }
+}

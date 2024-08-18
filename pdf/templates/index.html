@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Market Intelligence, Cost Drivers Report, {{ month }}</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+
+  <body>
+    <section class="title-page">
+      <div class="page title-page">
+        <div class="title-text">
+          <h1 class="report-title">Market Intelligence</h1>
+          <h2 class="report-subtitle">Cost Drivers Report</h2>
+          <h3 class="report-date">{{ month }}</h3>
+        </div>
+        <img
+          class="brand-logo"
+          src="{{url_for('static', filename='img/assets/brand_logo.png')}}"
+        />
+      </div>
+    </section>
+
+    <section class="contents-page">
+      <div class="page">
+        <h2 class="page-title">Contents</h2>
+        <div class="contents-container">
+          <ol class="toc-list" role="list">
+            {% for key, value in sources.items() %}
+            <li>
+              <a class="item-link" href="#section-{{ value['title'] }}">
+                <span class="title"
+                  >{{ value["title"] }}<span
+                    class="leaders"
+                    aria-hidden="true"
+                  ></span
+                ></span>
+                <span class="page-number">
+                  <span class="visually-hidden">page</span>{{ key + 2 }}</span
+                >
+              </a>
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
+        <img
+          class="brand-logo"
+          src="{{url_for('static', filename='img/assets/brand_logo.png')}}"
+        />
+      </div>
+    </section>
+
+    {% for key, value in sources.items() %}
+    <section
+      class="section-{{value['title'] }}"
+      id="section-{{value['title'] }}"
+    >
+      <div class="page">
+        <h2 class="page-title">{{ value["title"] }}</h2>
+        <div class="chart-container  cont-{{ value['images'] | length }}-imgs">
+          {% for img in value["images"] %}
+          <img
+            class="{% if img['comment'] %}image-smaller{% else %}image{% endif %}"
+            src="data:{{ img['path']._mime_type }};base64, {{ img['path']._base64_data }}"
+            alt="Matplotlib Figure"
+          />
+          {% if img['comment'] %}
+          <p class="comment">{{ img['comment'] }}</p>
+          {% endif %} {% endfor %}
+        </div>
+        <img
+          class="brand-logo"
+          src="{{url_for('static', filename='img/assets/brand_logo.png')}}"
+        />
+        <span class="footer-note">Private & Confidential</span>
+      </div>
+    </section>
+    {% endfor %}
+  </body>
+</html>

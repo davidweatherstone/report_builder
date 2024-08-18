@@ -1,5 +1,5 @@
 # Market Intelligence reporting
-Leverages HTML and CSS to design a A4 template for PDF reports. Utilizing Flask for server-side processing and Jinja2 for templating, I dynamically integrate a dictionary of Matplotlib figures and strings into the HTML file. This setup enables the seamless generation of paginated reports. [[Sample PDF Report]](https://github.com/davidweatherstone/report_builder/raw/main/Market%20Intelligence%2C%20Cost%20Drivers%20Report%2C%20Aug-24.pdf)
+Uses HTML and CSS to design an A4 template for PDF reports. Utilizing Flask for server-side processing and Jinja2 for templating, I integrate a dictionary of Matplotlib figures and strings into the HTML file. This setup enables the generation of paginated reports. [[Sample PDF Report]](https://github.com/davidweatherstone/report_builder/raw/main/Market%20Intelligence%2C%20Cost%20Drivers%20Report%2C%20Aug-24.pdf)
   
 ## Situation 
 Many businesses require reports on share prices, commodity prices, and industry-related indexes. 
